@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+  <div class="wypelnienie">
+
+  </div>
+  <div class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container">
+
+  <h1>Powiadomienia:</h1>
+      <ol>
+
+      <% posts.sort("-date").forEach(function(post){ %>
+
+        <li> <a href = "/powiadomienia/<%= post.id %>">
+
+            <%= post.kontakt %>
+
+          </a></li>
+
+        <%});%>
+
+        </ol>
+        <button type="button" class="btn custom-button" onclick="javascript:history.back()">Cofnij</button>
+
+
+</div>
+</div>
+
+  <%- include('partials/footer') %>

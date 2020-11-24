@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+  <div class="wypelnienie">
+
+  </div>
+  <div class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container">
+    <a href="/edit/film"><span class="btn btn-lg custom-button btn-block" role="button">Dodaj nowy film</span></a>
+    <br>
+    <h1>EDYTUJ:</h1>
+      <ol>
+
+      <% films.forEach(function(film){ %>
+
+        <li>  <a href="/delete/<%= film.href %>"><span class="x">X</span></a><a href="/edit/<%= film.href %>">
+
+            <%= film.title %>
+
+          </a></li>
+
+        <%});%>
+
+        </ol>
+        <button type="button" class="btn custom-button" onclick="javascript:history.back()">Cofnij</button>
+
+</div>
+</div>
+
+  <%- include('partials/footer') %>

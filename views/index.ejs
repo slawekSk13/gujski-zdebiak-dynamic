@@ -1,0 +1,72 @@
+<%- include('partials/header') %>
+
+  <section id="video" class="container-fluid">
+    <div class="carousel-container">
+
+
+      <div id="carouselVideo" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselVideo" data-slide-to="0" class="active"></li>
+          <% for (i=0; i<films.length; i++) { %>
+          <li data-target="#carouselVideo" data-slide-to="<%= i %>"></li>
+          <% } %>
+        </ol>
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <iframe width="1067" height="600" src="https://www.youtube.com/embed/NKxz1Ajm6Yc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <% films.forEach(function(film){ %>
+                    <div class="carousel-item">
+                      <iframe width="1067" height="600" src="<%= film.link %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <% }); %>
+        </div>
+        <a class="carousel-control-prev custom-carousel-control" href="#carouselVideo" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon custom-carousel-control" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next custom-carousel-control" href="#carouselVideo" role="button" data-slide="next">
+          <span class="carousel-control-next-icon custom-carousel-control" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="aktualnosci">
+
+
+    <div class="jumbotron custom-jumbotron">
+      <div class="container-fluid flexcontainer">
+        <% posts.forEach(function(post){ %>
+          <div class="blog-article">
+            <a href = "/posts/<%= post.href %>">
+        <h1> <%= post.title %> </h1>
+        <div class="lead">
+          <%= post.date %>
+          <br><br>
+          <% if (post.lead.length > 300) { %>
+          <%- post.lead.slice(0, 300); %>...</a>
+          <hr class="my-4">
+          <p class="read-more">
+            <a href = "/posts/<%= post.href %>">
+            <span class="btn btn-lg custom-button" role="button">Przeczytaj całość</span>
+            </a>
+          </p>
+          <%} else { %>
+          <%- post.lead %>
+          <hr class="my-4">
+          <p class="read-more">
+            <a href = "/posts/<%= post.href %>">
+            <span class="btn btn-lg custom-button" role="button">Przeczytaj całość</span>
+            </a>
+          </p>
+          <%}%>
+         </div>
+        <% }); %>  
+ </div>
+      </div>
+
+<%- include('partials/footer') %>

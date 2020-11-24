@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+  <div class="wypelnienie">
+
+  </div>
+  <div class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container">
+  <h1> Czy na pewno chcesz skasować <%= co %>: "<%= tytul %>" </h1>
+  <!-- <a href="/"> -->
+    <div class="read-more">
+
+<form action="/delete" method="post">
+  
+  <div class="form-group">
+    <input type="password" class="form-control" name ="pass" placeholder="<%= placeholder %>">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control invisible" name ="id" value="<%= id %>" readonly>
+  </div>
+  <br>
+    <button type="submit" class="btn btn-danger btn-lg">Kasuj</button>
+    <span class="btn btn-lg custom-button" role="button" onclick="javascript:history.back()">Anuluj</span>
+</form>
+  </div>
+<!-- </a> -->
+</div>
+</div>
+
+  <%- include('partials/footer') %>

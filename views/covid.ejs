@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+  <div class="wypelnienie">
+
+  </div>
+  <section id="covid">
+    <div class="jumbotron jumbotron-fluid custom-jumbotron">
+      <div class="container">
+
+
+        <img src="images/logo.png" alt="Kancelaria Adwokacko-Radcowska Gujski Zdebiak">
+        <br>
+        <% posts.forEach(function(post){ %>
+        <article class="blog-article">
+      <h1> <%= post.title %> </h1>
+      <div class="lead">
+        <%= post.date %>
+        <br><br>
+        <% if (post.lead.length > 300) { %>
+        <%- post.lead.slice(0, 300); %>...
+        <hr class="my-4">
+        <p class="read-more">
+          <a href="/posts/<%= post.href %>">
+          <span class="btn btn-lg custom-button" role="button">Przeczytaj całość</span>
+          </a>
+        </p>
+        <%} else { %>
+        <%- post.lead %>
+        <hr class="my-4">
+        <p class="read-more">
+          <a href = "/posts/<%= post.href %>">
+          <span class="btn btn-lg custom-button" role="button">Przeczytaj całość</span>
+          </a>
+        </p>
+        <%}%>
+       </div>
+</article>
+<% }); %>
+      </div>
+    </div>
+  </section>
+  <%- include('partials/footer') %>

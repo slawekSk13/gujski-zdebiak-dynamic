@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+  <div class="wypelnienie">
+
+  </div>
+  <div class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container">
+
+      <a href="/edit/artykul"><span class="btn btn-lg custom-button btn-block" role="button">Dodaj nowy artykuł</span></a>
+      <br>
+      <h1>EDYTUJ:</h1>
+      <ol>
+      <% posts.forEach(function(post){ %>
+
+        <li> <a href="/delete/<%= post.href %>"><span class="x">X</span></a> <a href = "/edit/<%= post.href %>">
+
+            <%= post.title %>
+
+          </a></li>
+
+        <%});%>
+
+        </ol>
+        <button type="button" class="btn custom-button" onclick="javascript:history.back()">Cofnij</button>
+
+
+</div>
+</div>
+
+  <%- include('partials/footer') %>

@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<div class="wypelnienie">
+
+</div>
+  <div class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container">
+      <h1>Wymagane logowanie</h1>
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="username">Nazwa użytkownika</label>
+              <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Hasło</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn custom-button">Zaloguj</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<%- include('partials/footer') %>

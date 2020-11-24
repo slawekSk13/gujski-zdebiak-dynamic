@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+  <div class="wypelnienie">
+
+  </div>
+  <div class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container">
+  <h1> <%= tytul %> </h1>
+  <p> <%= data %> </p>
+  <p> <%- lead %> </p>
+  <p> <%- tresc %> </p>
+  <p> Źródło: <a href="<%= link %>">
+     <%= zrodlo %> </a> </p>
+  <!-- <a href="/"> -->
+    <p class="read-more">
+    <span class="btn btn-lg custom-button" role="button" onclick="javascript:history.back()">Powrót</span>
+  </p>
+<!-- </a> -->
+</div>
+</div>
+
+  <%- include('partials/footer') %>
