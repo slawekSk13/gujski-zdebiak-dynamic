@@ -290,7 +290,7 @@ app.get("/delete/:postId", function(req, res) {
 app.post("/delete", function(req, res) {
   const requestedId = req.body.id;
   const pass = req.body.pass;
-  if(pass===process.env.SECRET) {
+  if(pass==="K4ncel@riA") {
   Post.deleteOne({_id: requestedId}, function() {
     console.log(requestedId);
   });
@@ -350,7 +350,7 @@ const blogEntry = new Post ({
   covid: covid
 });
 
-if(pass===process.env.SECRET) {
+if(pass==="K4ncel@riA") {
 Post.findOneAndUpdate({_id: req.body.id}, {$set: {
   title: tytul,
   date: data,
@@ -398,7 +398,7 @@ app.post("/edit-film", function(req, res) {
     href: href
   });
 
-if(pass===process.env.SECRET) {
+if(pass==="K4ncel@riA") {
   Film.findOneAndUpdate({_id: req.body.id}, {$set: {
     title: title,
     link: link,
