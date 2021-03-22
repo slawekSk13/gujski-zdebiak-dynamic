@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // mongoose.connect("mongodb://localhost:27017/gujskiZdebiakDB", {useUnifiedTopology: true, useNewUrlParser: true});
-mongoose.connect("mongodb+srv://admin-slawek:q7JYnTD9x8VPC7x@cluster0-jxlvx.mongodb.net/gujskiZdebiakDB?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true});
+mongoose.connect("mongodb+srv://MongoDBURI?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 
 const postsSchema = new mongoose.Schema({
